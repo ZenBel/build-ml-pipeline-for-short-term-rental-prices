@@ -1,4 +1,5 @@
 Link to personal W&B project: https://wandb.ai/zenobelligoli/nyc_airbnb?nw=nwuserzenobelligoli
+
 Link to Github repo: https://github.com/ZenBel/build-ml-pipeline-for-short-term-rental-prices
 
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
