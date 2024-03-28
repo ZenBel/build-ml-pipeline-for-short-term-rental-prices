@@ -28,10 +28,15 @@ def go(args):
     df = pd.read_csv(artifact_local_path)
     logger.info(f"Read input artifact CSV file and loaded data into a DataFrame")
 
-    # Drop outliers
+    # Drop price outliers
     idx = df["price"].between(args.min_price, args.max_price)
     df = df[idx].copy()
     logger.info(f"Dropped outliers based on specified min and max price")
+
+    # Drop geo outliers
+    idx = df["longitude"].between(-74.25, -73.50) & df["latitude"].between(40.5, 41.2)
+    df = df[idx].copy()
+    logger.info(f"Dropped outliers based on specified geo boundaries")
 
     # Convert last_review to datetime
     df["last_review"] = pd.to_datetime(df["last_review"])
